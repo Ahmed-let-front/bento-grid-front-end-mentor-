@@ -1,0 +1,302 @@
+/* start golbal rules */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+/* end global rules */
+/* start vairiabel */
+:root {
+  --Purple-o: hsl(254, 88%, 90%);
+  --Purple: hsl(256, 67%, 59%);
+  --Yellow-o: hsl(31, 66%, 93%);
+  --Yellow: hsl(39, 100%, 71%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 7%);
+}
+/* end variabel */
+html {
+  font-size: 18px;
+  line-height: 0.85;
+}
+/* bento design */
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background-color: hsl(0, 0%, 96%);
+  overflow-x: hidden;
+}
+.bento-grid {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(4, 200px);
+  grid-auto-rows: 100px;
+  padding: 60px 0;
+  grid-template-areas:
+    "c1 c2 c2 c3"
+    "c1 c2 c2 c3"
+    "c1 c5 c6 c3"
+    "c4 c5 c6 c3"
+    "c4 c7 c8 c8"
+    "c4 c7 c8 c8";
+  gap: 20px;
+  .column {
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+    h2 {
+      letter-spacing: -2px;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  .column-1 {
+    grid-area: c1;
+    background-color: var(--Yellow-o);
+    h2 {
+      font-size: 1.7rem;
+      margin: 40px 0 20px;
+      font-weight: 500;
+      letter-spacing: -3px;
+      span {
+        color: var(--Purple);
+        font-style: italic;
+      }
+    }
+    img {
+      max-width: 150px;
+    }
+  }
+  .column-2 {
+    grid-area: c2;
+    background-color: var(--Purple);
+    text-align: center;
+    h2 {
+      margin-top: 20px;
+      text-transform: capitalize;
+      color: var(--White);
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      span:first-child {
+        color: var(--Yellow);
+      }
+      span:last-child {
+        font-style: italic;
+      }
+    }
+    img {
+      max-width: 150px;
+    }
+    p {
+      color: var(--White);
+      font-size: 0.8rem;
+      margin-top: 7px;
+      font-weight: 200;
+    }
+  }
+  .column-3 {
+    grid-area: c3;
+    background-color: var(--Purple-o);
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    img {
+      max-width: 270px;
+      margin: 30px 0 30px 5px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+  }
+  .column-4 {
+    grid-area: c4;
+    background-color: var(--Yellow);
+    h2 {
+      font-weight: 500;
+      font-size: 1.9rem;
+    }
+    img {
+      max-width: 175px;
+      margin-top: 40px;
+    }
+  }
+  .column-5 {
+    grid-area: c5;
+    background-color: var(--White);
+    h2 {
+      margin-top: 40px;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    img {
+      max-width: 250px;
+    }
+  }
+  .column-6 {
+    grid-area: c6;
+    background-color: var(--Yellow);
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    img {
+      max-width: 150px;
+      margin-top: 34px;
+    }
+  }
+  .column-7 {
+    grid-area: c7;
+    background-color: var(--White);
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+    p {
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 150px;
+      margin-top: 40px;
+    }
+  }
+  .column-8 {
+    grid-area: c8;
+    background-color: var(--Purple);
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    h2 {
+      color: var(--White);
+      font-weight: 500;
+      font-size: 1.6rem;
+      display: grid;
+      place-items: center;
+      letter-spacing: -1px;
+    }
+    img {
+      max-width: 200px;
+      display: block;
+    }
+  }
+}
+/* bento design desktop*/
+/* media for mobil */
+@media (max-width: 1023px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    .column {
+      width: calc(100vw - 15px);
+    }
+    .column-2 {
+      order: -1;
+      h2 {
+        font-size: 2.6rem;
+      }
+      img {
+        width: 140px;
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+    .column-5 {
+      order: 0;
+      img {
+        max-width: 100%;
+      }
+    }
+    .column-6 {
+      order: 1;
+      img {
+        margin-bottom: -20px;
+        max-width: 200px;
+        margin-left: 5px;
+      }
+    }
+    .column-3 {
+      order: 2;
+      h2 {
+        text-align: center;
+      }
+      img {
+        margin: 20px auto;
+      }
+      p {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+      }
+    }
+    .column-8 {
+      order: 3;
+      display: flex;
+      flex-direction: column-reverse;
+      h2 {
+        width: 70%;
+        text-align: center;
+        margin: auto;
+      }
+    }
+    .column-7 {
+      order: 4;
+      img {
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+    }
+    .column-1 {
+      order: 5;
+      h2 {
+        font-size: 1.9rem;
+      }
+      img {
+        max-width: 200px;
+        margin-left: 10px;
+      }
+    }
+    .column-4 {
+      order: 6;
+      img {
+        margin-left: 10px;
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .attribution {
+    font-size: 0.7rem;
+  }
+}
