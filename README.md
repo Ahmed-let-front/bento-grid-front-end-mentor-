@@ -1,7 +1,7 @@
 # Frontend Mentor - Bento grid
 
 ![Design preview for the Bento grid coding challenge](./preview.jpg)
-
+## [Demo](https://ahmed-let-front.github.io/bento-grid-front-end-mentor-/)
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
